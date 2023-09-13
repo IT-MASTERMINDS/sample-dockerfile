@@ -1,0 +1,18 @@
+# Use the official Python 3.8 image as the base
+FROM python:3.8
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy the application files from the host into the container
+COPY app.py .
+
+# Install Flask, a web framework for Python
+RUN pip install Flask
+
+# Expose port 5000 to listen for incoming HTTP requests
+EXPOSE 5000
+
+# Specify the command to run when the container starts
+CMD ["python", "app.py"]
+
